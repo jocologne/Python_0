@@ -2,6 +2,7 @@ import sys
 
 
 def main():
+    """Filer string elements with len suoerior the given argument"""
     if len(sys.argv) != 3:
         print("AssertionError: the arguments are bad")
         return
