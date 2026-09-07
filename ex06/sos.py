@@ -2,7 +2,7 @@ import sys
 
 
 def main():
-    """Morse dict"""
+    """Cypher string to morse code"""
     MORSE = {
      "A": ".-", "a": ".-",
      "B": "-...", "b": "-...",
@@ -43,10 +43,20 @@ def main():
      " ": "/"
     }
 
+    if len(sys.argv) != 2:
+        print("AssertionError: the arguments are bad")
+        return
+
     string = sys.argv[1]
+
+    if not all(char.isalnum() or char == " " for char in string):
+        print("AssertionError: the arguments are bad")
+        return
+
+    result = []
     for let in string:
-        print (MORSE[let], end="")
-    print()
+        result.append(MORSE[let])
+    print(" ".join(result))
 
 
 if __name__ == "__main__":
