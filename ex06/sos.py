@@ -44,14 +44,12 @@ def main():
     }
 
     if len(sys.argv) != 2:
-        print("AssertionError: the arguments are bad")
-        return
+        raise AssertionError("Wrong number of arguments")
 
     string = sys.argv[1]
 
     if not all(char.isalnum() or char == " " for char in string):
-        print("AssertionError: the arguments are bad")
-        return
+        raise AssertionError("Arguments are bad")
 
     result = []
     for let in string:

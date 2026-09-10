@@ -4,8 +4,8 @@ import sys
 def main():
     """Count characters in string"""
 
-    if len(sys.argv) > 2:
-        print("AssertionError: more than one argument is provided")
+    if len(sys.argv) != 2:
+        raise AssertionError("Wrong number of arguments")
         return
 
     if len(sys.argv) == 1:
